@@ -99,11 +99,22 @@ PhanSo operator+(int n, PhanSo ps)
     PhanSo tong;
     tong.Tu = ps.Tu + ps.Mau * n;
     tong.Mau = ps.Mau;
+    return tong;
 }
 
 istream &operator>>(istream &is, PhanSo &ps)
 {
-    is >> ps.Tu >> ps.Mau;
+    cout << "\nNhap vao tu so: ";
+    is >> ps.Tu;
+    do
+    {
+        cout << "\nNhap vao mau so: ";
+        is >> ps.Mau;
+        if (ps.Mau == 0)
+        {
+            cout << "\nMau so khong hop le";
+        }
+    } while (ps.Mau == 0);
     return is;
 }
 
@@ -183,14 +194,33 @@ PhanSo PhanSo::operator/(int n)
     return (*this) * thuong;
 }
 
+// tien to ++
 PhanSo PhanSo::operator++()
 {
-    return *this + 1;
+    *this = *this + 1;
+    return *this;
 }
 
 PhanSo PhanSo::operator--()
 {
-    return *this - 1;
+    *this = *this - 1;
+    return *this;
+}
+
+// hau to ++
+PhanSo PhanSo::operator++(int x)
+{
+    PhanSo temp = *this;
+    *this = *this + 1;
+    return temp;
+}
+
+// hau to --
+PhanSo PhanSo::operator--(int x)
+{
+    PhanSo temp = *this;
+    *this = *this - 1;
+    return temp;
 }
 
 bool PhanSo::operator<(PhanSo ps)
@@ -200,7 +230,7 @@ bool PhanSo::operator<(PhanSo ps)
     return trai < phai;
 }
 
-bool PhanSo::operator<(PhanSo ps)
+bool PhanSo::operator>(PhanSo ps)
 {
     return ps < (*this);
 }
@@ -229,4 +259,43 @@ bool PhanSo::operator!=(PhanSo ps)
     double trai = (double)this->Tu / this->Mau;
     double phai = (double)ps.Tu / ps.Mau;
     return trai != phai;
+}
+
+PhanSo operator-(int n, PhanSo ps)
+{
+    PhanSo hieu(n, 1);
+    return hieu - ps;
+}
+
+PhanSo operator*(int n, PhanSo ps)
+{
+    PhanSo tich(n, 1);
+    return tich * ps;
+}
+
+PhanSo operator/(int n, PhanSo ps)
+{
+    PhanSo thuong(n, 1);
+    return thuong / ps;
+}
+
+PhanSo operator-=(int &n, PhanSo ps)
+{
+    PhanSo hieu = n - ps;
+    n -= (ps.Tu / ps.Mau);
+    return hieu;
+}
+
+PhanSo operator*=(int &n, PhanSo ps)
+{
+    PhanSo tich = n * ps;
+    n *= (ps.Tu / ps.Mau);
+    return tich;
+}
+
+PhanSo operator/=(int &n, PhanSo ps)
+{
+    PhanSo thuong = n / ps;
+    n /= (ps.Tu / ps.Mau);
+    return thuong;
 }
