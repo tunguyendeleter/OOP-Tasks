@@ -8,7 +8,7 @@ private:
     int Tu, Mau;
 
 public:
-    PhanSo();               // khoi tao mac dinh
+    PhanSo();               // khoi tao mac dinh.
     ~PhanSo();              // giai phong con tro
     PhanSo(int, int);       // tham so
     PhanSo(const PhanSo &); // sao chep: su dung khi cai dat con tro

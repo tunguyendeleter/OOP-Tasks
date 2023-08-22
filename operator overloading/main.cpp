@@ -10,7 +10,7 @@ int main()
     // Tong = a + 2;
     // cout << "\na + 2 = ";
     // Tong.Xuat();
-    // Tong = a + 2;jhghujghjhghj
+    // Tong = a + 2;
     // cout << "\n2 + a = ";
     // Tong.Xuat();
 
