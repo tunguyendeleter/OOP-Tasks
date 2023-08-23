@@ -13,8 +13,6 @@ void NhanVien::NhapNhanVien()
     fflush(stdin);
     cout << "\nNhap ho ten: ";
     getline(cin, HoTen);
-    cout << "\nNhap ma so: ";
-    getline(cin, MaSo);
     cout << "\nNhap ngay sinh: ";
     getline(cin, NgaySinh);
     cout << "\nNhap dia chi: ";
@@ -32,4 +30,24 @@ void NhanVien::XuatNhanVien()
 double NhanVien::TinhLuong()
 {
     return 0;
+}
+
+int NhanVien::Getter_id()
+{
+    return id;
+}
+
+void NhanVien::Setter_id(int i)
+{
+    id = i;
+}
+
+string NhanVien::Getter_maso()
+{
+    return MaSo;
+}
+
+void NhanVien::Setter_maso(string i)
+{
+    MaSo = i;
 }

@@ -20,6 +20,13 @@ void NhanVienSanXuat::NhapNhanVien()
             cout << "\nSo san pham khong hop le";
         }
     } while (SoSanPham < 0);
+    id = 2;
+}
+
+void NhanVienSanXuat::XuatNhanVien()
+{
+    NhanVien::XuatNhanVien();
+    cout << "\nSo san pham: " << SoSanPham;
 }
 
 double NhanVienSanXuat::TinhLuong()

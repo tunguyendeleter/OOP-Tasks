@@ -1,11 +1,10 @@
-#include "NhanVienSanXuat.h"
+#include "CongTy.h"
 
 int main()
 {
-    NhanVien *nv;
-    nv = new NhanVienSanXuat;
-    nv->NhapNhanVien();
-    nv->XuatNhanVien();
-    cout << "\nTinh luong: " << nv->TinhLuong();
+    CongTy ct;
+    ct.NhapNhanVien();
+    ct.XuatNhanVien();
+    // cout << "\nTinh luong: " << (size_t)nv->TinhLuong();
     return 0;
 }
